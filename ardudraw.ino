@@ -55,8 +55,9 @@ void loop() {
 
   // If B is held for one second
   if (bRepeat > ONE_SEC && bRepeat < ONE_SEC + 2) {
-    // Upload to the computer if there is a serial connection
+    // Restore the pixel under the cursor
     arduboy.drawPixel(cursorX, cursorY, pixelUnderCursor);
+    // Upload to the computer if there is a serial connection
     if (Serial) {
       Serial.write(width);
       Serial.write(height);
